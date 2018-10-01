@@ -1,0 +1,30 @@
+.vidTitle { font-family: 'Merriweather', serif;}
+.vidInfo { font-family: 'Montserrat', sans-serif;}
+.vidState { font-family: monospace }
+
+.search-bar {
+    margin: 20px;
+}
+
+.search-bar input  {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 24px;
+}
+
+.bold { font-weight: 700 }
+
+.video-detail .details {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+li.list-group-item.videoSelect { cursor: pointer }
+
+li.list-group-item.videoSelect:hover { 
+    background-color: #eee; 
+    border: 2px solid #aaa;
+}
