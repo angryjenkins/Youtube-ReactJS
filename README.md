@@ -11,5 +11,3 @@ A YouTube API Key is required to use this app.
 [Grab a key](http://help.dimsemenov.com/kb/wordpress-royalslider-tutorials/wp-how-to-get-youtube-api-key) and replace the variable `process.env.YOUTUBE_API_KEY` in `index.js` with your string.
 
 Happy searching!
-
-Enjoy searching YouTube!
