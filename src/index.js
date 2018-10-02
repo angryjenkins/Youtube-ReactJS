@@ -8,9 +8,6 @@ import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
-// const YOUTUBE_API_KEY = 'AIzaSyBXu_yk8KUve9mHHk20jh3wAU7olb_maoo';
-
-
 
 // create a new component that produces some HTML
 
