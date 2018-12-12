@@ -1,6 +1,17 @@
-.vidTitle { font-family: 'Merriweather', serif;}
-.vidInfo { font-family: 'Montserrat', sans-serif;}
-.vidState { font-family: monospace }
+.vidTitle { 
+    font-family: 'Arvo', serif; 
+    font-size: small;
+}
+.vidInfo { font-family: 'Lato', sans-serif;}
+.vidState { 
+    font-family: monospace;
+    background-color: #eee;
+    border: 1px solid #aaa;
+    /* border-radius: 6px; */
+    padding: 0 12px;
+}
+
+h2.vidTitle { font-size: 1.5rem }
 
 .search-bar {
     margin: 20px;
