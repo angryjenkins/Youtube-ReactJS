@@ -39,10 +39,8 @@ const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
          if(this.state.darkmode === false){
              viewClass = 'darkmode';
              document.body.classList.add('darkmode');
-             document.body.classList.remove('lightmode');
          } else {
             viewClass = 'lightmode';
-            document.body.classList.add('lightmode');
             document.body.classList.remove('darkmode');
          }
 
