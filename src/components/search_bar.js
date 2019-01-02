@@ -12,15 +12,18 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div className="search-bar">
-                <input 
-                    className="form-control vidTitle"
-                    value={this.state.term}
-                    onChange={(event) => this.onInputChange(event.target.value)} />
-                <p>
-                    <span className="bold">Current state:</span> <span className="vidState">{this.state.term}</span>
-                    <br />
-                     <span className="input-group">
+            <div className="row">
+                <div className="search-bar col-sm-10">
+                    <input 
+                        className="form-control vidTitle"
+                        value={this.state.term}
+                        onChange={(event) => this.onInputChange(event.target.value)} />
+                    <p>
+                        <span className="bold">Current state:</span> <span className="vidState">{this.state.term}</span>
+                    </p>
+                </div>
+                <div className="col-sm-2">
+                    <span className="input-group">
                         <span className="input-group-addon">
                             <input
                                 name="toggleDark"
@@ -29,7 +32,7 @@ class SearchBar extends Component {
                                 onChange={() => this.onDarkModeToggle()} />
                         </span>
                     </span>
-                </p>
+                </div>
             </div>
         );
     }    
