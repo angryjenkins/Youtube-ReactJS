@@ -25,11 +25,13 @@ class SearchBar extends Component {
                 <div className="col-sm-2">
                     <span className="input-group">
                         <span className="input-group-addon">
+                            <label htmlFor="toggleDark">Darkmode:</label>
                             <input
                                 name="toggleDark"
                                 type="checkbox"
                                 value={this.state.darkmode}
                                 onChange={() => this.onDarkModeToggle()} />
+                           
                         </span>
                     </span>
                 </div>

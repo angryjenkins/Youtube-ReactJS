@@ -35,16 +35,12 @@ const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
      toggleDarkMode() {
          this.setState({ darkmode: !this.state.darkmode});
-         var viewClass = '';
          if(this.state.darkmode === false){
-             viewClass = 'darkmode';
              document.body.classList.add('darkmode');
          } else {
-            viewClass = 'lightmode';
             document.body.classList.remove('darkmode');
          }
 
-         console.log(viewClass);
      }
 
      render() {
