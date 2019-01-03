@@ -13,10 +13,6 @@
 
 h2.vidTitle { font-size: 1.5rem }
 
-.search-bar {
-    margin: 20px;
-}
-
 .search-bar input  {
     width: 100%;
     text-align: center;
@@ -38,4 +34,33 @@ li.list-group-item.videoSelect { cursor: pointer }
 li.list-group-item.videoSelect:hover { 
     background-color: #eee; 
     border: 2px solid #aaa;
+}
+
+.darkmode {
+    color: #eee;
+    background-color: #2c3e50;
+}
+
+.darkmode a {
+    color: orange
+}
+
+.darkmode a:hover {
+    color: yellow
+}
+
+.darkmode .list-group-item {
+    color: #eee;
+    background-color: #2c3e50;
+    border: 1px solid #ddd;
+}
+
+.darkmode .vidState { 
+    color: black;
+}
+
+.darkmode li.list-group-item.videoSelect:hover { 
+    background-color: #bbb; 
+    border: 2px solid #aaa;
+    color: #2c3e50;
 }

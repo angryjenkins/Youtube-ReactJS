@@ -17,7 +17,8 @@ const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
         this.state = {
             videos: [],
-            selectedVideo: null
+            selectedVideo: null,
+            darkmode: false
         };
 
         this.videoSearch('hello world');
@@ -32,12 +33,25 @@ const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
         });
      }
 
+     toggleDarkMode() {
+         this.setState({ darkmode: !this.state.darkmode});
+         if(this.state.darkmode === false){
+             document.body.classList.add('darkmode');
+         } else {
+            document.body.classList.remove('darkmode');
+         }
+
+     }
+
      render() {
         const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 800);
 
         return (
             <div>
-                <SearchBar onSearchTermChange={(term) => this.videoSearch(term)}/>
+                <SearchBar 
+                    onSearchTermChange={(term) => this.videoSearch(term)}
+                    onDarkModeToggle={() => this.toggleDarkMode()}
+                />
                 <VideoDetail video={this.state.selectedVideo} />
                 <VideoList 
                     videos={this.state.videos}
