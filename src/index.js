@@ -62,4 +62,4 @@ const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
  }
 
 // tae the generated HTML and render in the DOM
-ReactDOM.render(<App />, document.querySelector('.row'));
+ReactDOM.render(<App />, document.querySelector('#boundary'));
