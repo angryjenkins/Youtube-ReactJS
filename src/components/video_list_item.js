@@ -4,9 +4,11 @@ import moment from 'moment';
 const VideoListItem = ({video, onVideoSelect}) => {
     // const video = props.video;
 
+    const parser = new DOMParser()
+
     const info = {
         image: video.snippet.thumbnails.default.url,
-        title: video.snippet.title,
+        title: parser.parseFromString(`<!doctype html><body>${video.snippet.title}`,'text/html').body.textContent,
         channel: video.snippet.channelTitle,
         date: moment(video.snippet.publishedAt).format('MM/YYYY')
     }
