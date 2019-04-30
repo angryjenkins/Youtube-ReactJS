@@ -12,13 +12,15 @@ const VideoDetail = ({video}) => {
         channel: video.snippet.channelId,
         vid: video.id.videoId
     }
+
+    const parser = new DOMParser()
     
     const info = {
         channel: video.snippet.channelTitle,
         channelUrl: `https://www.youtube.com/channel/${ids.channel}`,
         url: `https://www.youtube.com/embed/${ids.vid}`,
-        title: video.snippet.title,
-        desc: video.snippet.description,
+        title: parser.parseFromString(`<!doctype html><body>${video.snippet.title}`,'text/html').body.textContent,
+        desc: parser.parseFromString(`<!doctype html><body>${video.snippet.description}`,'text/html').body.textContent,
         date: moment(video.snippet.publishedAt).format('MMMM Do YYYY')
     }
 
