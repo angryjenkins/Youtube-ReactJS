@@ -6,6 +6,7 @@ import YouTubeSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
+import Toggle from './components/Toggle';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -35,27 +36,26 @@ const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
      toggleDarkMode() {
          this.setState({ darkmode: !this.state.darkmode});
-         var viewClass = '';
          if(this.state.darkmode === false){
-             viewClass = 'darkmode';
              document.body.classList.add('darkmode');
          } else {
-            viewClass = 'lightmode';
             document.body.classList.remove('darkmode');
          }
 
-         console.log(viewClass);
      }
 
      render() {
-        const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 800);
-
+        const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 1200);
         return (
             <div>
-                <SearchBar 
-                    onSearchTermChange={(term) => this.videoSearch(term)}
-                    onDarkModeToggle={() => this.toggleDarkMode()}
-                />
+                <div className="row">
+                    <SearchBar 
+                        onSearchTermChange={(term) => this.videoSearch(term)}
+                    />
+                    <Toggle 
+                        onDarkModeToggle={() => this.toggleDarkMode()}
+                    />
+                </div>
                 <VideoDetail video={this.state.selectedVideo} />
                 <VideoList 
                     videos={this.state.videos}
@@ -66,4 +66,4 @@ const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
  }
 
 // tae the generated HTML and render in the DOM
-ReactDOM.render(<App />, document.querySelector('.row'));
+ReactDOM.render(<App />, document.querySelector('#boundary'));
